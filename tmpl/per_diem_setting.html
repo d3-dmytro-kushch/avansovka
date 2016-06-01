@@ -23,9 +23,31 @@
                 </div>
         </div>
 
-        <div al-enable="useStandardDiems">
-          <p>700 Ruble Per Day - Travel in Russia</p>
-          <p>2500 Ruble Per - Day Travel abroad</p>
+        <div>
+            <div al-show="useStandardDiems">
+                <p>700 Ruble Per Day - Travel in Russia</p>
+                <p>2500 Ruble Per - Day Travel abroad</p>
+            </div>
+            <div class="list-block" al-show="!useStandardDiems">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">Ruble Per Day - Travel in Russia</div>
+                            <div class="item-input">
+                                <input type="number" name="diem-in-russia" placeholder="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">Ruble Per Day - Travel in abroad</div>
+                            <div class="item-input">
+                                <input type="number" name="diem-in-aboard" placeholder="">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
           <div class="list-block">
             <ul><!--http://xn--80aafbpx0aic0apb7duc.xn--80asehdb/explanation/per-diems-in-russia/?lang=en-->
@@ -42,39 +64,6 @@
               </li>
             </ul>
           </div>
-
-          <div class="row">
-                  <div class="col-">
-                      <p>Adjusted Russian Ruble Per Diems</p>
-                  </div>
-                  <div class="col-">
-                    <label class="label-switch">
-                      <input type="checkbox">
-                      <div class="checkbox" name="use-adjusted-diems"></div>
-                    </label>
-                  </div>
-           </div>
-
-           <div class="list-block">
-               <ul>
-                   <li class="item-content">
-                       <div class="item-inner">
-                           <div class="item-title label">Ruble Per Day - Travel in Russia</div>
-                           <div class="item-input">
-                               <input type="number" name="diem-in-russia" placeholder="">
-                           </div>
-                       </div>
-                   </li>
-                   <li class="item-content">
-                       <div class="item-inner">
-                           <div class="item-title label">Ruble Per Day - Travel in abroad</div>
-                           <div class="item-input">
-                               <input type="number" name="diem-in-aboard" placeholder="">
-                           </div>
-                       </div>
-                   </li>
-               </ul>
-           </div>
           </div>
       </div>
       </form>
