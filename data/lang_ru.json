@@ -1,0 +1,243 @@
+
+
+{
+  "pages": {
+    "page1": {
+      "title": "Начальная страница",
+      "Welcome": "Добро пожаловать в программу создания авансовых отчетов. Установка начинается."
+    },
+    "page2a": {
+      "title": "Языковые установки",
+      "Prefered_language_2a": "Пожалуйста, выберите свой язык"
+    },
+    "page2b": {
+      "title": "Языковые настройки",
+      "Prefered_language_2b": "Пожалуйста, выберите свой язык"
+    },
+    "page3": {
+      "Just_start": "Просто начать",
+      "Press_One": "Выберите один из вариантов",
+      "read_information": "Ознакомится с возможностями",
+      "setup_app": "Установить",
+      "title": "Для начала работы выберите:"
+    },
+    "page4": {
+      "title": "Описание верхнего меню",
+      "Active_link": "Активная ссылка",
+      "Not_active_link": "НЕ активная ссылка",
+      "Up_And_Sometimes_Forward": "Вверх и, иногда, вперед",
+      "Forward": "Вперед",
+      "DESCRIPTION_BOTTOM_NAVIGATION_BAR": "Описание кнопок верхнего меню",
+      "Page_And_General_Information": "Общая информация и Информация о страницах",
+      "Mange_Expenses": "Управление авансовыми отчетами",
+      "Add_single_expense": "Добавить один отчет",
+      "Settings": "Настройки",
+      "Active_link_Down": "Активная ссылка",
+      "Not_active_link_Down": "НЕ активная ссылка"
+    },
+    "page5": {
+      "title": "Описание",
+      "DESCRIPTION_From": "Помощь",
+      "GENERAL_INFORMATION_SOURCES": "Основные информационные ресурсы"
+    },
+    "page6": {
+      "title": "Установка",
+      "listItems": [
+        {
+          "title": "Персональная информация",
+          "link": "tmpl/personal_info.html"
+        },
+        {
+          "title": "Языковые настройки",
+          "link": "tmpl/language_setting.html"
+        },
+        {
+          "title": "Настройка суточных",
+          "link": "tmpl/per_diem_setting.html"
+        },
+        {
+          "title": "Категории затрат",
+          "link": "tmpl/expense_category.html"
+        },
+        {
+          "title": "Типы оплаты",
+          "link": "tmpl/payment_type.html"
+        },
+        {
+          "title": "Обязательные настройки",
+          "link": "tmpl/must_settings.html"
+        },
+        {
+          "title": "Отчеты",
+          "link": "tmpl/reporting_setup.html"
+        },
+        {
+          "title": "Корпоративная информация",
+          "link": "tmpl/corporate_info.html"
+        },
+        {
+          "title": "Корпоративная политика по командировкам",
+          "link": "tmpl/trave_policy.html"
+        },
+        {
+          "title": "Пример",
+          "link": "tmpl/test_sample_data.html"
+        }
+      ]
+    },
+      "page7": {
+        "title": "Личная информация",
+        "PERSONAL_INFORMATION": "Личная информация",
+        "First_Name": "Имя",
+        "Second_Name": "Отчество",
+        "Family_Name": "Фамилия",
+        "Function": "Обязанности",
+        "Email": "Email",
+        "Mobile_Phone": "Мобильный телефон",
+        "Fixed_line_phone": "Домашний телефон",
+        "Save": "Записать"
+      },
+      "page8": {
+        "title": "Настройки суточных",
+        "Standard_Russian_Per_Diems": "Нормы суточных согласно ТК",
+        "Ruble_Per_Day_Travel_in_Russia": "700 рублей в день  - по России ",
+        "Ruble_Per_Day_Travel abroad": "2500 рублей в день – за границу",
+        "Explain_Russian_Per_Diem_Calculation": "Как рассчитать суточные в России?",
+        "Adjusted_Russian_Ruble_Per_Diems": "Разрешить корректировку суточных?",
+        "Ruble_Per_Day_Travel_In_Russia": "Суточные по России:",
+        "Ruble_Per_Day_Travel_abroad": "Суточные за границей:",
+        "Save": "Записать"
+      },
+      "page9": {
+        "title": "Категории затрат",
+        "Accounting": "Бухгалтерские",
+        "expenses_categories": [
+          { "title": "Отель и размещение" },
+          { "title": "Такси" },
+          { "title": "Билеты и разное" },
+          { "title": "Телефон" },
+          { "title": "Представительские расходы" },
+          { "title": "Другие заказы" },
+          { "title": "Рабочие расходы" }
+        ]
+      },
+      "page9_1": {
+        "title": "Категории затрат",
+        "Business": "Бизнес",
+        "expenses_categories": [
+          { "title": "Новые продажи" },
+          { "title": "Текущие клиенты" },
+          { "title": "Сотрудник" },
+          { "title": "Партнер" },
+          { "title": "Разработка проекта" }
+        ]
+      },
+      "page9_2": {
+        "title": "Категории затрат",
+        "Projects": "Проект",
+        "expenses_categories": [
+          { "title": "Новый проект" }
+        ]
+      },
+      "page10": {
+        "title": "Тип оплаты",
+        "payment_categories": [
+          { "title": "Нал" },
+          { "title": "Личная кредитная/дебетовая карта 1" },
+          { "title": "Корпоративная кредитная/дебетовая карта 1" },
+          { "title": "Личная кредитная/дебетовая карта 2" },
+          { "title": "Корпоративная кредитная/дебетовая карта 2" },
+          { "title": "Оплачивается компанией" },
+          { "title": "Компания, которой платит" }
+        ]
+      },
+      "page11": {
+        "title": "Обязательные настройки",
+        "Minimum": "Минимум",
+        "Most": "Максимум",
+        "Date": "Дата",
+        "Time": "Время",
+        "Amount": "Сумма"
+      },
+      "page12": {
+        "title": "Настройки отчета",
+        "Recipients_Email": "E-mail получателя",
+        "Email_1": "Email 1",
+        "Email_2": "Email 2",
+        "Report_Type_And_Format": "Тип  и формат отчета",
+        "Allow_Direct_Send": "Разрешить непосредственную отправку",
+        "Full_Format": "Полный формат",
+        "Short_Format": "Краткий формат",
+        "Paper_Sign_Off": "Требуется подпись?",
+        "Approver": "Утвердил",
+        "Save": "Записать"
+      },
+      "page13": {
+        "title": "Корпоративная информация",
+        "Legal_Name_Of_Company": "Юридическое название",
+        "Legal_Address": "Юридический адрес",
+        "General_Director": "Генеральный директор",
+        "OGNR": "OGNR",
+        "TIN": "ИНН",
+        "KPP": "КПП"
+      },
+      "page14": {
+        "title": "Внутренняя политика предприятия",
+        "Policy_SW": "Внутренняя политика предприятия",
+        "Policy_Txt": "Внутренняя политика предприятия",
+        "Save": "Записать"
+      },
+      "page15": {
+        "title": "Тестирование программы",
+        "Test_Email": "Email",
+        "Enter_Test_Email": "Введите тестовый email",
+        "Send_Test_Email": "Отправить тестовый email",
+        "Settings": "Нажмите для установки стандартных настроек",
+        "Import_Sample_Data": "Импортировать данные для примера",
+        "Delete_Sample_Data": "Удалить данные для примеры",
+        "Test": "Разрешить прямую отправку",
+        "Enter_New_Expanse": "Введите новую затрату",
+        "Try_Test_Reporting": "Посмотреть тестовый отчет"
+      },
+      "page30": {
+        "title": "Выберите действие",
+        "Trip_Management": "Командировка",
+        "Corrections": "Корректировка данных",
+        "Single_Expense": "Создать авансовый отчет",
+        "Reports": "Отчеты"
+      },
+      "page31": {
+        "title": "Добавить затраты",
+        "Amount": "Сумма",
+        "How_Paid": "Способ платежа",
+        "Accounting_Expense": "Статья затрат по Бухгалтерскому учету",
+        "Business_Expense": "Статья затрат по Управленческому учету",
+        "Project_Expense": "Статья затрат по проекту",
+        "Comment": "Комментарий",
+        "Correction_Page": "Изменить",
+        "Save": "Записать"
+      },
+      "page32": {
+        "title": "Управление командировками",
+        "Trip_Name": "Цель командировки",
+        "From ": "Откуда ",
+        "To": "Куда",
+        "Russia": "Россия",
+        "Now": "Сейчас",
+        "And_Back_To_Start": "Туда и обратно",
+        "More_Triplegs": "Еще один пункт назначения",
+        "Comment": "Комментарий",
+        "Corrections": "Изменить"
+      },
+      "page33": {
+        "title": "Корректировочная страница",
+        "Expense_Wheel": "Затраты",
+        "Information_About_Expense_Above ": "Информация о расходах",
+        "Business_Trip": "Командировка",
+        "Information_About_Business_Trip": "Информация о командировке",
+        "Comments_Earlier_Sent": "Ранее отправленный комментарий",
+        "Earlier_Sent_Files": "Ранее отправленные файлы",
+        "Enter_Comments_Here": "Введите свой комментарий "
+      }
+  }
+}

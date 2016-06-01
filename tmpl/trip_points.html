@@ -1,0 +1,61 @@
+
+  <!-- Page, data-page contains page name-->
+  <div data-page="trip_manager" class="page" id="page">
+      <div class="navbar" al-navbar="tmpl/description.html">
+      </div>
+
+      <div class="toolbar toolbar-bottom" al-toolbar>
+      </div>
+
+      <!-- Scrollable page content-->
+    <div class="page-content"  al-ctrl="tripPoints" al-init="init()">
+
+        <div class="content-block-title">Points Manager</div>
+        <div class="content-block">
+            <a href="tmpl/point_editor.html" class="button button-raised">Add point</a>
+        </div>
+
+        <div class="list-block media-list">
+            <ul>
+
+                <!-- directive: al-repeat (id,point) in ds.data.points orderBy: id,reverse -->
+
+                    <li>
+                        <a href="tmpl/expenses_list.html" class="item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">Expenses</div>
+                                    <div class="item-after">3</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                    <a href="tmpl/point_editor.html" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">{{point.name}}</div>
+                                <div class="item-after">{{point.dt}}</div>
+                            </div>
+                            <div class="item-subtitle">{{point.ru}}</div>
+                            <div class="item-text">{{point.comment}}</div>
+                        </div>
+                    </a>
+
+                    </li>
+
+
+                <!-- /directive: al-repeat -->
+
+
+
+            </ul>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+

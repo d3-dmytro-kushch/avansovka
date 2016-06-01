@@ -1,0 +1,237 @@
+{
+  "pages": {
+    "page1": {
+      "title": "Startup",
+      "Welcome": "Welcome to you're expense reporting tool. Setup in process"
+    },
+    "page2a": {
+      "title": "Language Select on Startup",
+      "Prefered_language_2a": "Please select your prefered language"
+    },
+    "page2b": {
+      "title": "Language Select afterward",
+      "Prefered_language_2b": "Please select your prefered lenguage"
+    },
+    "page3": {
+      "Just_start": "Just start",
+      "Press_One": "Press One",
+      "read_information": "Read Information",
+      "setup_app": "Setup App",
+      "title": "Start up Action selection"
+    },
+    "page4": {
+      "title": "Description Navigation Page",
+      "Active_link": "Active link",
+      "Not_active_link": "Not active link",
+      "Up_And_Sometimes_Forward": "Up (and sometimes forward)",
+      "Forward": "Forward",
+      "DESCRIPTION_BOTTOM_NAVIGATION_BAR": "DESCRIPTION BOTTOM NAVIGATION BAR",
+      "Page_And_General_Information": "Page and General Information",
+      "Mange_Expenses": "Mange Expenses",
+      "Add_single_expense": "Add single expense",
+      "Settings": "Settings",
+      "Active_link_Down": "Active link",
+      "Not_active_link_Down": "Not active link"
+    },
+    "page5": {
+      "title": "DESCRIPTION",
+      "DESCRIPTION_From": "Help text",
+      "GENERAL_INFORMATION_SOURCES": "GENERAL INFORMATION SOURCES"
+    },
+    "page6": {
+      "title": "Setup",
+      "listItems": [
+        {
+          "title": "Personal information",
+          "link": "tmpl/personal_info.html"
+        },
+        {
+          "title": "Language Settings",
+          "link": "tmpl/language_setting.html"
+        },
+        {
+          "title": "Per Diem Settings",
+          "link": "tmpl/per_diem_setting.html"
+        },
+        {
+          "title": "Expense Categories",
+          "link": "tmpl/expense_category.html"
+        },
+        {
+          "title": "Payment Types",
+          "link": "tmpl/payment_type.html"
+        },
+        {
+          "title": "Currency",
+          "link": "tmpl/currency.html"
+        },
+        {
+          "title": "Reporting",
+          "link": "tmpl/reporting_setup.html"
+        },
+        {
+          "title": "Corporate Information",
+          "link": "tmpl/corporate_info.html"
+        },
+        {
+          "title": "Travel and Expense Policy",
+          "link": "tmpl/trave_policy.html"
+        }
+      ]
+    },
+      "page7": {
+        "title": "DESCRIPTION",
+        "PERSONAL_INFORMATION": "PERSONAL INFORMATION",
+        "First_Name": "First Name",
+        "Second_Name": "Second Name",
+        "Family_Name": "Family Name",
+        "Function": "Function",
+        "Email": "Email",
+        "Mobile_Phone": "Mobile Phone",
+        "Fixed_line_phone": "Fixed line phone",
+        "Save": "Save"
+      },
+      "page8": {
+        "title": "PER DIEM SETTINGS",
+        "Standard_Russian_Per_Diems": "Standard Russian Per Diems",
+        "Ruble_Per_Day_Travel_in_Russia": "700 Ruble per Day � Travel in Russia",
+        "Ruble_Per_Day_Travel abroad": "2500 Ruble per Day � Travel abroad",
+        "Explain_Russian_Per_Diem_Calculation": "Explain Russian per diem calculation",
+        "Adjusted_Russian_Ruble_Per_Diems": "Adjusted Russian Ruble per Diems",
+        "Ruble_Per_Day_Travel_In_Russia": "Ruble per Day � Travel in Russia",
+        "Ruble_Per_Day_Travel_abroad": "Ruble per Day � Travel abroad",
+        "Save": "Save"
+      },
+      "page9": {
+        "title": "EXPENSE CATEGORIES",
+        "Accounting": "Accounting",
+        "expenses_categories": [
+          { "title": "Hotel and Accommodation" },
+          { "title": "Taxi" },
+          { "title": "Tickets and other" },
+          { "title": "Phone" },
+          { "title": "Representation Expenses" },
+          { "title": "Other Purchases" },
+          { "title": "Business" }
+        ]
+      },
+      "page9_1": {
+        "title": "EXPENSE CATEGORIES",
+        "Business": "Business",
+        "expenses_categories": [
+          { "title": "New Sales" },
+          { "title": "Current Clients" },
+          { "title": "Employees" },
+          { "title": "Partners" },
+          { "title": "Project Development" }
+        ]
+      },
+      "page9_2": {
+        "title": "EXPENSE CATEGORIES",
+        "Projects": "Projects",
+        "expenses_categories": [
+          { "title": "New Project" }
+        ]
+      },
+      "page10": {
+        "title": "PAYMENT TYPE",
+        "payment_categories": [
+          { "title": "Cash" },
+          { "title": "Private Credit Card 1 � Edit" },
+          { "title": "Corporate Credit Card 1 � Edit" },
+          { "title": "Private Credit Card 2 � Edit" },
+          { "title": "Corporate Credit Card 2 � Edit" },
+          { "title": "Company to pay" },
+          { "title": "Company paid" }
+        ]
+      },
+      "page11": {
+        "title": "MUST SETTINGS",
+        "Minimum": "Minimum",
+        "Most": "Most",
+        "Date": "Date",
+        "Time": "Time",
+        "Amount": "Amount"
+      },
+      "page12": {
+        "title": "REPORTING SETUP",
+        "Recipients_Email": "Recipients Email",
+        "Email_1": "Email 1",
+        "Email_2": "Email 2",
+        "Report_Type_And_Format": "Report Type and Format",
+        "Allow_Direct_Send": "Allow direct Send",
+        "Full_Format": "Full Format",
+        "Short_Format": "Short Format",
+        "Paper_Sign_Off": "Paper Sign Off",
+        "Approver": "Approver",
+        "Save": "Save"
+      },
+      "page13": {
+        "title": "CORPORATE INFORMATION",
+        "Legal_Name_Of_Company": "Legal Name of Company",
+        "Legal_Address": "Legal Address",
+        "General_Director": "General Director",
+        "OGNR": "OGNR",
+        "TIN": "TIN",
+        "KPP": "KPP"
+      },
+      "page14": {
+        "title": "Policy",
+        "Policy_SW": "Policy",
+        "Policy_Txt": "Policy",
+        "Save": "Save"
+      },
+      "page15": {
+        "title": "TEST SAMPLE DATA",
+        "Test_Email": "Email",
+        "Enter_Test_Email": "Enter test email adress",
+        "Send_Test_Email": "Send test email adress",
+        "Settings": "Press to set standard setting",
+        "Import_Sample_Data": "Import sample data",
+        "Delete_Sample_Data": "Delete sample data",
+        "Test": "Allow direct Send",
+        "Enter_New_Expanse": "Enter new expanse",
+        "Try_Test_Reporting": "Try test reporting"
+      },
+      "page30": {
+        "title": "SELECT TASK",
+        "Trip_Management": "Trip Management",
+        "Corrections": "Corrections",
+        "Single_Expense": "Single Expense",
+        "Reports": "Reports"
+      },
+      "page31": {
+        "title": "ADD EXPENSE",
+        "Amount": "Amount",
+        "How_Paid": "How Paid",
+        "Accounting_Expense": "Accounting Expense",
+        "Business_Expense": "Business Expense",
+        "Project_Expense": "Project Expense",
+        "Comment": "Comment",
+        "Correction_Page": "Correction Page",
+        "Save": "Save"
+      },
+      "page32": {
+        "title": "TRIP MANAGER",
+        "Trip_Name": "Trip Name",
+        "From ": "From ",
+        "To": "To",
+        "Russia": "Russia",
+        "Now": "Now",
+        "And_Back_To_Start": "And back to start",
+        "More_Triplegs": "More Triplegs",
+        "Comment": "Comment",
+        "Corrections": "Corrections"
+      },
+      "page33": {
+        "title": "CORRECTION",
+        "Expense_Wheel": "Expense Wheel",
+        "Information_About_Expense_Above ": "Information_About_Expense_Above ",
+        "Business_Trip": "Business Trip",
+        "Information_About_Business_Trip": "Information about Business Trip",
+        "Comments_Earlier_Sent": "Comments earlier sent",
+        "Earlier_Sent_Files": "Earlier Sent Files",
+        "Enter_Comments_Here": "Enter Comments here"
+      }
+    }
+}

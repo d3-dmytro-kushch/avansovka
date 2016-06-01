@@ -1,0 +1,222 @@
+
+  <!-- Page, data-page contains page name-->
+  <div data-page="trip_manager" class="page" id="page">
+      <div class="navbar" al-navbar="tmpl/description.html">
+      </div>
+
+      <div class="toolbar toolbar-bottom" al-toolbar>
+      </div>
+
+      <!-- Scrollable page content-->
+    <div class="page-content"  al-ctrl="tripManagerNew" al-init="init()">
+
+        <div class="content-block-title">Trip Manager</div>
+        <div class="content-block">
+            <a href="tmpl/point.html" class="button button-raised">Add point</a>
+        </div>
+
+        <div class="list-block media-list">
+            <ul>
+                <li>
+                    <a href="#" class="item-content bg-blue50">
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">Moscaw</div>
+                                <div class="item-after">23.12.2015 17:14</div>
+                            </div>
+                            <div class="item-subtitle">Russia</div>
+                            <div class="item-text">Bla bla bla bla dsfas asd saasdfa wer bla bla bla Lorem ipsum dolor sit amet</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">Expenses</div>
+                                <div class="item-after">2450 руб</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">Кострома</div>
+                                <div class="item-after">23.12.2015 17:14</div>
+                            </div>
+                            <div class="item-subtitle">Russia</div>
+                            <div class="item-text">Bla bla bla bla dsfas asd saasdfa wer bla bla bla Lorem ipsum dolor sit amet</div>
+                        </div>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+
+        <div class="list-block">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <select id="trips">
+                                    <option>New trip</option>
+                                    <option al-repeat="trip in trips" value="{{=trip.id}}">{{=trip.name}}</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <input type="text" placeholder="Tripname" al-value="tripname">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="bg-blue50">
+                    <div class="item-content">
+                        <div class="item-inner">
+
+                            <div class="item-input">
+                                <input type="text" placeholder="From" al-value="from">
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                <li  class="bg-blue50">
+                    <label class="label-checkbox item-content">
+                        <!-- Checked by default -->
+                        <input type="checkbox" name="cb-from-ru" value="ru" al-checked="cbfromru">
+                        <div class="item-media">
+                            <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title">Russia</div>
+                        </div>
+                    </label>
+                </li>
+
+                <li  class="bg-blue50">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">Date & time</div>
+
+                            <div class="item-input">
+                                <input type="datetime-local" al-value="dtfrom">
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+
+
+                <li  class="bg-green50">
+
+                    <div class="item-content">
+                        <div class="item-inner">
+
+                            <div class="item-input">
+                                <input type="text" placeholder="To" al-value="to">
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+
+
+                <li class="bg-green50">
+                    <label class="label-checkbox item-content">
+                        <!-- Checked by default -->
+                        <input type="checkbox" name="cb-to-ru" value="ru" al-checked="cbtoru">
+                        <div class="item-media">
+                            <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title">Russia</div>
+                        </div>
+                    </label>
+                </li>
+
+                <li  class="bg-green50">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">Date & time</div>
+                            <div class="item-input">
+                                <input type="datetime-local" al-value="dtto">
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <a href="#" class="button button-raised" al-click="addBackToStart()">Add back to start</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <a href="#" class="button button-raised">More Triplegs</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="align-top">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">Comment</div>
+                            <div class="item-input">
+                                <textarea class="resizable input-border"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--li>
+                    <div class="item-content">
+                        <div class="item-media">
+                            <a href="#" al-click="recordAudioComment()">
+                                <i class="fa fa-microphone" style="font-size: 35px;"></i>
+                            </a>
+
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <input type="text" readonly disabled placeholder="Click microphone to record" al-value="audioUrl">
+                            </div>
+                        </div>
+                    </div>
+                </li-->
+
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <p class="buttons-row">
+                <a href="#" class="button button-raised">Correction page</a>
+                <a href="#" class="button button-raised">Save</a>
+            </p>
+
+            <a href="#" class="button button-raised button-fill">Finish Trip</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+

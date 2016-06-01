@@ -1,0 +1,79 @@
+
+  <!-- Page, data-page contains page name-->
+  <div data-page="payment_type" class="page" id="page">
+
+          <div class="navbar" al-navbar="tmpl/description.html">
+          </div>
+
+          <div class="toolbar toolbar-bottom" al-toolbar="help/help_paytype.html">
+          </div>
+
+      <!-- Scrollable page content-->
+    <div class="page-content" al-ctrl="paymentType" al-init="init()">
+      <div class="content-block-title">Payment Type</div>
+
+
+
+        <div class="list-block">
+            <ul>
+
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">
+                            <div class="item-input">
+                                <input type="text" placeholder="New payment" al-value="newvalue" al-keypress="addnewvalue($event.keyCode)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-after" al-click="addnewvalue(13)">
+                        <a href="#">
+                            <i class="fa fa-plus-square pull-left" al-css="disabled: newvalue == ''"></i>
+                        </a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="list-block">
+            <ul>
+                <li class="item-divider"><span class="pull-right">Own (On)/Comp (Off)</span></li>
+                <li class="swipeout" al-repeat="item in paytypes">
+                    <div class="swipeout-content">
+                        <label class="label-checkbox item-content">
+                            <!-- Checked by default -->
+                            <input type="checkbox"  value="item.title" al-checked="item.checked" al-change="updateChecked($index)">
+                            <div class="item-media">
+                                <i class="icon icon-form-checkbox"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">{{item.title}}</div>
+                                <!--div class="item-after" al-click="removeItem()">
+                                    <a href="#" class="context-menu-button"><i class="fa fa-ellipsis-v"></i></a>
+                                </div-->
+                                <label class="label-switch">
+                                    <input type="checkbox" al-checked="item.whopay" al-change="updateChecked($index)">
+                                    <div class="checkbox"></div>
+                                </label>
+
+
+                            </div>
+
+                        </label>
+
+                    </div>
+                    <div class="swipeout-actions-right">
+                        <!-- Swipeout actions links/buttons -->
+                        <a class="swipeout-delete" al-click="remove($index)" href="#">Delete</a>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+  </div>
+

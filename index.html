@@ -2,102 +2,285 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>My App</title>
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';img-src * data: 'unsafe-inline'; media-src: *">
+
+
+
+      <title>Fin Report</title>
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <!link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!link rel="stylesheet" href="lib/bootstrap.min.css">
     <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+
+    <!--link rel="stylesheet" href="lib/framework7.ios.min.css"-->
+      <!-- Path to Framework7 Library CSS with fix to select theme onloading-->
+      <script>
+          var isAndroid = false;
+          var isIos = false;
+
+
+          if (navigator.userAgent.match(/Android/) || navigator.userAgent.match(/IEMobile/)) {
+              isAndroid = true;
+          } else {
+              isIos = true;
+          }
+
+          //isAndroid = false;
+          //isIos = true;
+
+
+          // Add CSS Styles
+          if (isAndroid) {
+              //document.write(toStaticHTML('<link rel="stylesheet" href="css/framework7.material.min.css">' +
+              //'<link rel="stylesheet" href="css/framework7.material.colors.min.css">'));
+              loadjscssfile("lib/framework7.material.css", "css");
+              loadjscssfile("lib/framework7.material.colors.css", "css");
+
+          }
+          else {
+              //document.write(toStaticHTML('<link rel="stylesheet" href="css/framework7.ios.min.css">' +
+              //'<link rel="stylesheet" href="css/framework7.ios.colors.min.css">'));
+              loadjscssfile("lib/framework7.ios.min.css", "css");
+              loadjscssfile("lib/framework7.ios.colors.min.css", "css");
+          }
+
+          function loadjscssfile(filename, filetype) {
+              if (filetype == "js") { //if filename is a external JavaScript file
+                  var fileref = document.createElement('script')
+                  fileref.setAttribute("type", "text/javascript")
+                  fileref.setAttribute("src", filename)
+              }
+              else if (filetype == "css") { //if filename is an external CSS file
+                  var fileref = document.createElement("link")
+                  fileref.setAttribute("rel", "stylesheet")
+                  fileref.setAttribute("type", "text/css")
+                  fileref.setAttribute("href", filename)
+              }
+              if (typeof fileref != "undefined")
+                  document.getElementsByTagName("head")[0].appendChild(fileref)
+          }
+
+      </script>
+
+    <link rel="stylesheet" href="css/f7fix.css">
+
+    <script src="js/w81shim.js"></script>
+    <script>
+
+      (function() {
+        //detect MSIE10/WP8
+        if ("-ms-user-select" in document.documentElement.style &&
+                (navigator.userAgent.match(/IEMobile\/10/) ||
+                navigator.userAgent.match(/WPDesktop/))) {
+          var msViewportStyle = document.createElement("style");
+          msViewportStyle.appendChild(
+                  document.createTextNode("@-ms-viewport{width:66% !important; height: 66% !important;}")
+          );
+          document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+      })();
+    </script>
+
+
+    <link rel="stylesheet" href="lib/drum.css">
+
     <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/finreport.css">
   </head>
   <body>
-    <!-- Status bar overlay for fullscreen mode-->
-    <div class="statusbar-overlay"></div>
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-      <div class="content-block">
-        <p>Left panel content goes here</p>
-      </div>
-    </div>
-    <!-- Right panel with cover effect-->
-    <div class="panel panel-right panel-cover">
-      <div class="content-block">
-        <p>Right panel content goes here</p>
-      </div>
-    </div>
-    <!-- Views-->
-    <div class="views">
-      <!-- Your main view, should have "view-main" class-->
-      <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <!-- We have home navbar without left link-->
-            <div class="center sliding">Awesome App</div>
-            <div class="right">
-              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
-            </div>
-          </div>
-        </div>
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
-          <!-- Page, data-page contains page name-->
-          <div data-page="index" class="page">
-            <!-- Scrollable page content-->
-            <div class="page-content">
-              <div class="content-block-title">Welcome To My Awesome App</div>
-              <div class="content-block">
-                <div class="content-block-inner">
-                  <p>Couple of worlds here because my app is so awesome!</p>
-                  <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
+
+      <!-- Status bar overlay for full screen mode (PhoneGap) -->
+      <div class="statusbar-overlay"></div>
+      <!-- Views -->
+      <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+
+
+          <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+          <div class="pages navbar-fixed toolbar-fixed">
+            <!-- Page, "data-page" contains page name -->
+            <div data-page="index" class="page" id="index-page" al-cloak >
+
+
+
+                <!-- Top Navbar-->
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link back"><i class="fa fa-chevron-left"></i></a>
+                        </div>
+                        <div class="center">
+                            <a href="#" class="link"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        <div class="right">
+                            <a href="tmpl/descript_navbar.html" class="link"><i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Toolbar-->
+                <div class="toolbar  toolbar-bottom">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="tmpl/description.html" class="link"><i class="fa fa-question-circle"></i></a>
+                        <a href="index.html" class="link disabled"><i class="fa fa-plus-circle"></i></a>
+                        <a href="#"  class="link new-single-expense"><i class="fa fa-rub"></i></a>
+                        <a href="tmpl/setup.html"  class="link"><i class="fa fa-cog"></i></a>
+                    </div>
+                </div>
+
+
+                <!-- Scrollable page content -->
+              <div class="page-content">
+                <!--div class="content-block-title">Select Task</div-->
+                <!--div class="content-block">{{model.message}}</div-->
+
+
+                <div class="content-block">
+                  <div class="row">
+                    <div class="col-50 text-center">
+                      <a href="tmpl/trip_manager.html">
+                        <i class="fa fa-plane fs-icon"></i>
+                        <h5 class="Trip_Management">Trip Managment</h5>
+                      </a>
+                    </div>
+                    <!--div class="col-50 text-center">
+                      <a href="tmpl/trip_points.html">
+                        <i class="fa fa-location-arrow fs-icon"></i>
+                        <h5 class="Corrections">Points</h5>
+                      </a>
+                    </div-->
+                    <div class="col-50 text-center">
+                      <a href="tmpl/correction.html">
+                        <i class="fa fa-pencil fs-icon"></i>
+                        <h5 class="Corrections">Corrections</h5>
+                      </a>
+                    </div>
+                    <br>
+                    <div class="col-50 text-center">
+                      <a href="#" class="new-single-expense">
+                        <i class="fa fa-rub fs-icon"></i>
+                        <h5 class="Single_Expense">Single Expense</h5>
+                      </a>
+                    </div>
+                    <div class="col-50 text-center">
+                      <a href="tmpl/send_report.html">
+                        <i class="fa fa-newspaper-o fs-icon"></i>
+                        <h5 class="Reports">Reports</h5>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
                 </div>
               </div>
-              <div class="content-block-title">What about simple navigation?</div>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+      <style>
+          .popover {
+              width: 200px;
+          }
+      </style>
+
+      <div class="popover popover-report">
+          <div class="popover-angle"></div>
+          <div class="popover-inner">
               <div class="list-block">
-                <ul>
-                  <li><a href="about.html" class="item-link">
-                      <div class="item-content">
-                        <div class="item-inner"> 
-                          <div class="item-title">About</div>
-                        </div>
-                      </div></a></li>
-                  <li><a href="services.html" class="item-link">
-                      <div class="item-content"> 
-                        <div class="item-inner">
-                          <div class="item-title">Services</div>
-                        </div>
-                      </div></a></li>
-                  <li><a href="form.html" class="item-link">
-                      <div class="item-content"> 
-                        <div class="item-inner">
-                          <div class="item-title">Form</div>
-                        </div>
-                      </div></a></li>
-                </ul>
+                  <ul>
+                      <li><a href="#" class="list-button item-link report-preview close-popover">Preview report</a></li>
+                      <li><a href="#" class="list-button item-link report-email  close-popover">Send by email</a></li>
+                  </ul>
               </div>
-              <div class="content-block-title">Side panels</div>
-              <div class="content-block">
-                <div class="row">
-                  <div class="col-50"><a href="#" data-panel="left" class="button open-panel">Left Panel</a></div>
-                  <div class="col-50"><a href="#" data-panel="right" class="button open-panel">Right Panel</a></div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-        <!-- Bottom Toolbar-->
-        <div class="toolbar">
-          <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
-        </div>
       </div>
-    </div>
+      <div class="popover popover-se-report">
+          <div class="popover-angle"></div>
+          <div class="popover-inner">
+              <div class="list-block">
+                  <ul>
+                      <li><a href="#" class="list-button item-link report-se-preview close-popover">Preview report</a></li>
+                      <li><a href="#" class="list-button item-link report-se-email  close-popover">Send by email</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="popup popup-preview navbar-fixed">
+          <div class="page">
+          <div class="navbar">
+              <div class="navbar-inner">
+
+                  <div class="left"><a href="#" class="link icon-only close-popup"><i class="fa fa-chevron-left"></i></a></div>
+                  <div class="center">Report preview</div>
+                  <div class="right"><a href="#" class="link icon-only close-popup send-from-preview"><i class="fa fa-paper-plane-o"></i></a></div>
+              </div>
+          </div>
+          <div class="page-content">
+          <div class="content-block">
+              <pre id="preview-content"></pre>
+          </div>
+          </div>
+          </div>
+      </div>
+
+    <script src="cordova.js"></script>
+    <script src="lib/jquery-1.11.3.min.js"></script>
+    <script src="lib/alight_0.12.last.min.js"></script>
+
+
     <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="lib/framework7.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <!script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"><!/script>
+
+
+    <script src="contrib/hammerjs/hammer.min.js"></script>
+  	<!script src="contrib/hammerjs/hammer.fakemultitouch.js"><!/script>
+  	<script src="lib/drum.js"></script>
+
+    <!-- <script>
+  "use strict";
+
+  Hammer.plugins.fakeMultitouch();
+
+  $(document).ready(function () {
+    $("#country").drum({ panelCount: 24 });
+  });
+
+</script> -->
+
+
     <!-- Path to your app js-->
-    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="lib/marked.min.js"></script>
+    <script type="text/javascript" src="js/dataservice.js"></script>
+    <script type="text/javascript" src="js/finreport.js"></script>
+    <script type="text/javascript" src="js/ctrl/correctionpage.js"></script>
+    <script type="text/javascript" src="js/ctrl/tripmanager.js"></script>
+    <script type="text/javascript" src="js/ctrl/sendreport.js"></script>
+    <script type="text/javascript" src="js/ctrl/singleexpense.js"></script>
+    <script type="text/javascript" src="js/ctrl/settingspages.js"></script>
+
+
+
   </body>
 </html>
