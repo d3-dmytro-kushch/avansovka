@@ -1,0 +1,157 @@
+
+  <!-- Page, data-page contains page name-->
+  <div data-page="expense_category_account" class="page" id="page">
+
+      <div class="navbar" al-navbar="tmpl/description.html">
+      </div>
+
+      <div class="toolbar toolbar-bottom" al-toolbar>
+      </div>
+
+    <div class="page-content" al-ctrl="expCatAcc" al-init="init()">
+
+
+      <div class="content-block-title">Expense Categories</div>
+      <div class="content-block">
+                    <div class="item-input">
+                      <div class="pull-left">
+                          <p>Accounting</p>
+                      </div>
+                      <div class="pull-right">
+                              <label class="label-switch">
+                                  <input type="checkbox" name="cb-expcatacc" al-checked="expcat.enabled" al-change="updateEnabled()">
+                                    <div class="checkbox"></div>
+                              </label>
+                      </div>
+                    </div>
+
+        </div>
+        <br /> <!-- it's fix for strange behavior first element - moved to right-->
+
+        <div class="list-block" al-class="disabled: expcat.enabled === false">
+            <ul>
+
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">
+                            <div class="item-input">
+                                <input type="text" placeholder="New expense" al-value="newvalue" al-keypress="addnewvalue($event.keyCode)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-after" al-click="addnewvalue(13)">
+                        <a href="#">
+                            <i class="fa fa-plus-square pull-left" al-css="disabled: newvalue == ''"></i>
+                        </a>
+                    </div>
+
+                </li>
+             </ul>
+         </div>
+
+        <div class="list-block" al-class="disabled: expcat.enabled === false">
+          <ul>
+
+              <li class="swipeout" al-repeat="item in expcat.list">
+                  <div class="swipeout-content">
+                  <label class="label-checkbox item-content">
+                      <!-- Checked by default -->
+                      <input type="checkbox"  value="item.title" al-checked="item.checked" al-change="updateChecked($index)">
+                      <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                      </div>
+                      <div class="item-inner">
+                          <div class="item-title">{{item.title}}</div>
+                      </div>
+                  </label>
+
+                  </div>
+                  <div class="swipeout-actions-right">
+                      <!-- Swipeout actions links/buttons -->
+                      <a class="swipeout-delete" al-click="remove($index)" href="#">Delete</a>
+                  </div>
+
+              </li>
+
+
+              <!--li>
+              <label class="label-checkbox item-content">
+
+                <input type="checkbox" name="my-checkbox" value="Books">
+                <div class="item-media">
+                  <i class="icon icon-form-checkbox"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title">Hotel and Accomentation</div>
+                </div>
+              </label>
+            </li>
+
+
+            <li>
+              <label class="label-checkbox item-content">
+                <input type="checkbox" name="my-checkbox" value="Movies">
+                <div class="item-media">
+                  <i class="icon icon-form-checkbox"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title">Taxi</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="label-checkbox item-content">
+                <input type="checkbox" name="my-checkbox" value="Movies" checked="checked">
+                <div class="item-media">
+                  <i class="icon icon-form-checkbox"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title">Tickets and other</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="label-checkbox item-content">
+                <input type="checkbox" name="my-checkbox" value="Movies">
+                <div class="item-media">
+                  <i class="icon icon-form-checkbox"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title">Phone</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="label-checkbox item-content">
+                <input type="checkbox" name="my-checkbox" value="Movies">
+                <div class="item-media">
+                  <i class="icon icon-form-checkbox"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title">Representation Expenses</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="label-checkbox item-content">
+                <input type="checkbox" name="my-checkbox" value="Movies">
+                <div class="item-media">
+                  <i class="icon icon-form-checkbox"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title">Other Purchases</div>
+                </div>
+              </label>
+            </li-->
+
+
+
+
+          </ul>
+
+        </div>
+
+
+    </div>
+  </div>
+

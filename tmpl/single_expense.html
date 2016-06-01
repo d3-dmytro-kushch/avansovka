@@ -1,0 +1,269 @@
+
+  <!-- Page, data-page contains page name-->
+  <div data-page="single_expense" class="page" id="page">
+      <div class="navbar" al-navbar="tmpl/description.html">
+      </div>
+
+      <div class="toolbar toolbar-bottom" al-toolbar>
+      </div>
+
+
+      <!-- Scrollable page content-->
+    <div class="page-content" al-ctrl="singleExpense" al-init="init()">
+
+        <div class="content-block-title">Single expense</div>
+        <input type="hidden" al-value="expense.id">
+        <div class="list-block inputs-list">
+            <ul>
+
+                <li class="row">
+                    <div class="item-content col-60">
+                          <div class="item-inner">
+                              <div class="item-title label">Amount</div>
+                            <div class="item-input">
+                                <input type="number" min="0" placeholder="0.00" al-value="expense.amount">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-content col-40">
+                        <div class="item-inner">
+                            <div class="item-title label"><a href="tmpl/currency.html">Currency</a></div>
+
+                                <select name="currency" id="currency" al-select="expense.currency">
+                                    <option al-repeat="cur in currency | onlyselected" al-option="cur.title">{{=cur.title}}</option>
+                                </select>
+
+                        </div>
+                    </div>
+
+
+                </li>
+
+                <!--li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">Currency</div>
+                            <div class="item-input">
+                                <select name="currency" al-value="currency">
+                                    <option value="rub">Руб</option>
+                                    <option value="euro">Euro</option>
+                                    <option value="usd">$</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </li-->
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">Date & time</div>
+                            <div class="item-input">
+                               <input type="datetime-local" al-value="expense.datetime">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </li>
+
+                <li al-repeat="image in images track by $index" class="swipeout" @deleted="removeImage($index)">
+                    <div class="item-content swipeout-content">
+                        <div class="item-media">
+                            <img al-src="{{image}}" class="image-thumb"/>
+                        </div>
+
+                        <div class="item-inner">
+                            <div class="item-title">
+                                {{image}}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swipeout-actions-right">
+                        <!-- Swipeout actions links/buttons -->
+                        <a class="swipeout-delete" a-click="removeImage($index)" href="#">Delete</a>
+                    </div>
+
+                </li>
+
+                <li >
+                    <div class="item-content">
+                        <div class="item-media">
+                            <a href="#" al-click="getPhoto(0)">
+                                <i class="fa fa-camera" style="font-size: 35px;"></i>
+                            </a>
+                            <span style="width:10px"></span>
+                            <a href="#" al-click="getPhoto(1)">
+                                <i class="fa fa-file-image-o" style="font-size: 35px;"></i>
+                            </a>
+
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <input type="text" readonly al-value="expense.imageUrl" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--li >
+                    <div class="item-content">
+                        <div class="item-media">
+                            <a href="#" al-click="getPhoto(1)">
+                            <i class="fa fa-file-image-o" style="font-size: 35px;"></i>
+                        </a>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <input type="text" readonly al-value="imageUrl" />
+                            </div>
+                        </div>
+                    </div>
+                </li-->
+            </ul>
+        </div>
+
+      <div class="content-block1">
+
+
+
+          <div class="list-block">
+              <ul>
+
+
+                                  <!--li>
+                                      <input type="hidden" placeholder="Date Time" readonly id="picker-date">
+                                      <div class="item-content">
+                                          <div class="item-inner">
+                                              <div id="picker-date-container"></div>
+                                          </div>
+                                      </div>
+                                  </li-->
+
+
+
+                  <li>
+
+                      <div class="item-content">
+                          <div class="item-inner">
+                      <div class="item-title"><a href="#">Add to trip</a>
+                          <select id="opentrips" al-select="expense.trip">
+                              <option al-option="null">No</option>
+                              <option al-repeat="trip in ds.data.trips" al-option="trip.id">{{=trip.name}}</option>
+
+                          </select>
+                      </div>
+                        </div>
+                    </div>
+
+
+
+                        <div class="item-content">
+                          <div class="item-inner">
+                              <div class="item-title"><a href="tmpl/payment_type.html">How Paid</a>
+
+                                  <select id="payment-type" al-select="expense.paytype">
+                                      <option al-option="null">Not selected</option>
+                                      <option al-repeat="item in paytypes | onlyselected" al-option="item.title"> ({{(item.whopay == 0)?"Own":"Comp"}}) {{=item.title}}</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+
+
+
+                  </li>
+                  <li class="item-divider">Expenses</li>
+                  <li>
+                      <div class="item-content" al-hide="expcatacc.enabled === false">
+                          <div class="item-inner">
+                              <div class="item-title"><a href="tmpl/expense_category_accounting.html">Accounting expenses</a>
+
+                                  <select id="accounting-expense" al-select="expense.expacc">
+                                      <option al-option="null">Not selected</option>
+                                      <option al-repeat="item in expcatacc.list | onlyselected" al-option="item.title">{{=item.title}}</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                      </li>
+                  <li>
+
+                      <div class="item-content" al-hide="expcatbus.enabled === false">
+                          <div class="item-inner">
+                              <div class="item-title"><a href="tmpl/expense_category_business.html">Business expense</a>
+
+                                  <select id="business-expense" al-select="expense.expbus">
+                                      <option al-option="null">Not selected</option>
+                                      <option al-repeat="item in expcatbus.list | onlyselected" al-option="item.title">{{=item.title}}</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+
+
+                  </li>
+
+
+                  <li al-hide="expcatpro.enabled === false">
+                      <div class="item-content col-40">
+                          <div class="item-inner">
+                              <div class="item-title"><a href="tmpl/expense_category_project.html">Project expenses</a>
+                                  <select id="project-expense" al-select="expense.exppro">
+                                      <option al-option="null">Not selected</option>
+                                      <option al-repeat="item in expcatpro.list | onlyselected" al-option="item.title">{{=item.title}}</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="align-top">
+                      <div class="item-content">
+                          <div class="item-inner">
+                              <div class="item-title label">Comment</div>
+                              <div class="item-input">
+                                  <textarea class="resizable input-border" id="comment" al-value="expense.comment"></textarea>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <li  al-click="recordAudioComment()">
+                      <div class="item-content" >
+                          <div class="item-media">
+                              <a href="#" al-click="recordAudioComment()">
+                                  <i class="fa fa-microphone" style="font-size: 35px;"></i>
+                              </a>
+
+                          </div>
+                          <div class="item-inner">
+                              <!--div class="item-title label">Sound Comment</div-->
+                              <div class="item-input">
+                                  <input type="text" readonly disabled placeholder="Click microphone to record" al-value="expense.audioUrl">
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+
+
+              </ul>
+
+          </div>
+
+          <div class="content-block">
+          <p class="buttons-row">
+            <a href="#" class="button button-fill button-raised" al-click="saveExpense()" al-enable="!!expense.amount">Save</a>
+            <a href="#" class="button button-report" al-click="sendSingleExpense()" al-enable="expense.id !== ''">Send expense</a>            <!--p class="buttons-row">
+                <a href="#" class="button button-raised" al-click="fillTextArea()">Correction page</a>
+                <a href="#" class="button button-raised">Save</a>
+            </p-->
+          </p>
+          </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
