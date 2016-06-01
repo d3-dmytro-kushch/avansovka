@@ -247,5 +247,42 @@ alight.ctrl.perDiemSettings = function(ss, cd) {
     };
 
 };
+var fb_login = function () {
+    if (window.cordova.platformId == "browser") {
+        var appId = prompt("Enter FB Application ID", "");
+        facebookConnectPlugin.browserInit(appId);
+    }
+    facebookConnectPlugin.login( ["email"],
+        function (response) { alert(JSON.stringify(response)) },
+        function (response) { alert(JSON.stringify(response)) });
+}
+
+var fb_showDialog = function () {
+    facebookConnectPlugin.showDialog( { method: "feed" },
+        function (response) { alert(JSON.stringify(response)) },
+        function (response) { alert(JSON.stringify(response)) });
+}
+
+var fb_apiTest = function () {
+    facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
+        function (response) { alert(JSON.stringify(response)) },
+        function (response) { alert(JSON.stringify(response)) });
+}
+var fb_getAccessToken = function () {
+    facebookConnectPlugin.getAccessToken(
+        function (response) { alert(JSON.stringify(response)) },
+        function (response) { alert(JSON.stringify(response)) });
+}
+
+var fb_getStatus = function () {
+    facebookConnectPlugin.getLoginStatus(
+        function (response) { alert(JSON.stringify(response)) },
+        function (response) { alert(JSON.stringify(response)) });
+}
+var fb_logout = function () {
+    facebookConnectPlugin.logout(
+        function (response) { alert(JSON.stringify(response)) },
+        function (response) { alert(JSON.stringify(response)) });
+}
 
 

@@ -78,51 +78,12 @@
         </div>
 
         <div class="content-block-title">Social platforms</div>
-            <div class="event listening button" onclick="login();">Login with Facebook</div>
-            <div class="event listening button" onclick="showDialog();">Show Dialog with Facebook</div>
-            <div class="event listening button" onclick="apiTest();">Test API with Facebook</div>
-            <div class="event listening button" onclick="getAccessToken();">Get access token with Facebook</div>
-            <div class="event listening button" onclick="getStatus();">Get login status with Facebook</div>
-            <div class="event listening button" onclick="logout();">Logout with Facebook</div>
-            <script type="text/javascript">
-                var login = function () {
-                    if (window.cordova.platformId == "browser") {
-                        var appId = prompt("Enter FB Application ID", "");
-                        facebookConnectPlugin.browserInit(appId);
-                    }
-                    facebookConnectPlugin.login( ["email"],
-                            function (response) { alert(JSON.stringify(response)) },
-                            function (response) { alert(JSON.stringify(response)) });
-                }
-
-                var showDialog = function () {
-                    facebookConnectPlugin.showDialog( { method: "feed" },
-                            function (response) { alert(JSON.stringify(response)) },
-                            function (response) { alert(JSON.stringify(response)) });
-                }
-
-                var apiTest = function () {
-                    facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
-                            function (response) { alert(JSON.stringify(response)) },
-                            function (response) { alert(JSON.stringify(response)) });
-                }
-                var getAccessToken = function () {
-                    facebookConnectPlugin.getAccessToken(
-                            function (response) { alert(JSON.stringify(response)) },
-                            function (response) { alert(JSON.stringify(response)) });
-                }
-
-                var getStatus = function () {
-                    facebookConnectPlugin.getLoginStatus(
-                            function (response) { alert(JSON.stringify(response)) },
-                            function (response) { alert(JSON.stringify(response)) });
-                }
-                var logout = function () {
-                    facebookConnectPlugin.logout(
-                            function (response) { alert(JSON.stringify(response)) },
-                            function (response) { alert(JSON.stringify(response)) });
-                }
-            </script>
+            <div class="event listening button" onclick="fb_login();">Login with Facebook</div>
+            <div class="event listening button" onclick="fb_showDialog();">Show Dialog with Facebook</div>
+            <div class="event listening button" onclick="fb_apiTest();">Test API with Facebook</div>
+            <div class="event listening button" onclick="fb_getAccessToken();">Get access token with Facebook</div>
+            <div class="event listening button" onclick="fb_getStatus();">Get login status with Facebook</div>
+            <div class="event listening button" onclick="fb_logout();">Logout with Facebook</div>
         <div class="list-block">
             <ul>
                 <li class="item-content">
